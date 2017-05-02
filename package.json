@@ -1,13 +1,13 @@
 {
-  "name": "apiai-webhook-sample",
+  "name": "Katrien",
   "version": "1.0.0",
-  "description": "Webhook sample",
+  "description": "A Google Homespital",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Danil Skachkov <danil.skachkov@speaktoit.com> (https://api.ai)",
+  "author": "Tijn Renders <tijnrenders@gmail.com>",
   "license": "Apache 2.0",
   "dependencies": {
     "body-parser": "^1.15.0",

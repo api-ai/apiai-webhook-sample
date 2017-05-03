@@ -9,7 +9,7 @@
 "use strict";
 
 // Import Express for routing, etc.
-const express = require('express');
+const express = require('expressa');
 // Import filesystem 
 const fs = require("fs");
 // Import Path
@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 
 app.post('/hook', function (req, res) {
 
-    console.log('hook request');
+    console.log('Request from API.ai received');
 
     try {   
         var speech = 'empty speech';

@@ -20,13 +20,15 @@ const bodyParser = require('body-parser');
 // Import Request for HTTP requests
 const request = require('request');
 
+const app = express();
+
 // Import HTTP server
 const http = require('http').Server(app);
 
 // Import socket.io
 const io = require('socket.io')(http);
 
-const app = express();
+
 app.use(bodyParser.json());
 
 app.post('/hook', function (req, res) {

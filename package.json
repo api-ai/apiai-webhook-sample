@@ -2,7 +2,7 @@
   "name": "Katrien",
   "version": "1.0.0",
   "description": "A Google Homespital",
-  "main": "index.js",
+  "main": "server.js",
   "repository": "https://github.com/tijnrenders/katrien.git",
   "scripts": {
     "start": "node server.js",

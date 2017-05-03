@@ -4,6 +4,7 @@
  * Code for the setup of the Katrien Server
  * Handles custom actions for a Google Home bot, through webhooks to API.ai
  ******************/
+//test
 
 // Enable strict mode
 "use strict";

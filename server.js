@@ -20,12 +20,6 @@ const bodyParser = require('body-parser');
 // Import Request for HTTP requests
 const request = require('request');
 
-// Import HTTP server
-const http = require('http').Server(app);
-
-// Import socket.io
-const io = require('socket.io')(http);
-
 const app = express();
 app.use(bodyParser.json());
 
@@ -70,17 +64,13 @@ app.post('/hook', function (req, res) {
     }
 });
 
-// Defining a route handler / that gets called when we hit our website home.
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
-});
-
-// Listen on the connection event for incoming sockets, and log it to the console.
-io.on('connection', function(socket){
-  console.log('a user connected');
-});
 
 app.listen((process.env.PORT || 5000), function () {
     console.log("Server started");
 });
+
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
+
 

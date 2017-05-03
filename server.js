@@ -66,7 +66,7 @@ app.post('/hook', function (req, res) {
 
 
 app.listen((process.env.PORT || 5000), function () {
-    console.log("Server started for realz");
+    console.log("Server started");
 });
 
 app.get('/', function(req, res){

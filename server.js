@@ -1,41 +1,47 @@
 /******************
  * SETUP
  *
- * Code for the setup of the project / server
+ * Code for the setup of the Katrien Server
+ * Handles custom actions for a Google Home bot, through webhooks to API.ai
  ******************/
 
 // Enable strict mode
 "use strict";
 
+// Import Express for routing, etc.
 const express = require('express');
+// Import filesystem 
+const fs = require("fs");
+// Import Path
+const path = require('path');
+// Import BodyParser for parsing data
 const bodyParser = require('body-parser');
+// Import Request for HTTP requests
+const request = require('request');
 
+const app = express();
+app.use(bodyParser.json());
 
-const restService = express();
-restService.use(bodyParser.json());
-
-restService.post('/hook', function (req, res) {
+app.post('/hook', function (req, res) {
 
     console.log('hook request');
 
-    try {
+    try {   
         var speech = 'empty speech';
 
-        if (req.body) {
-            var requestBody = req.body;
+        if (req.body && req.body.result) {
+            var body = req.body;
+            speech = '';
 
-            if (requestBody.result) {
-                speech = '';
-
-                if (requestBody.result.fulfillment) {
-                    speech += requestBody.result.fulfillment.speech;
-                    speech += ' ';
-                }
-
-                if (requestBody.result.action) {
-                    speech += 'action: ' + requestBody.result.action;
-                }
+            if (body.result.fulfillment) {
+                speech += body.result.fulfillment.speech;
+                speech += ' ';
             }
+
+            if (body.result.action) {
+                speech += 'action: ' + body.result.action;
+            }
+            
         }
 
         console.log('result: ', speech);
@@ -57,6 +63,6 @@ restService.post('/hook', function (req, res) {
     }
 });
 
-restService.listen((process.env.PORT || 5000), function () {
-    console.log("Server listening");
+app.listen((process.env.PORT || 5000), function () {
+    console.log("Server started");
 });

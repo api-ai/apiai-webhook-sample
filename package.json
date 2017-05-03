@@ -11,6 +11,10 @@
   "license": "Apache 2.0",
   "dependencies": {
     "body-parser": "^1.15.0",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "await": "^0.2.6",
+    "bluebird": "^3.5.0",
+    "request": "^2.79.0",
+    "request-promise-native": "^1.0.3"
   }
 }

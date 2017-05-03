@@ -74,7 +74,7 @@ app.post('/hook', function (req, res) {
 
 // Defining a route handler / that gets called when we hit our website home.
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/frontend/index.html');
 });
 
 // Listen on the connection event for incoming sockets, and log it to the console.

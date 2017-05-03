@@ -10,9 +10,9 @@
   },
   "author": "Tijn Renders <tijnrenders@gmail.com>",
   "dependencies": {
-    "body-parser": "^1.15.0",
-    "express": "^4.13.4",
     "await": "^0.2.6",
+    "body-parser": "^1.15.0",
+    "express": "^4.15.2",
     "request": "^2.79.0",
     "request-promise-native": "^1.0.3"
   }

@@ -82,7 +82,7 @@ io.on('connection', function(socket){
   console.log('a user connected');
   setTimeout(function(){
     //Sending an object when emmiting an event
-    socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
+    socket.emit('testerEvent', res.json);
     }, 4000);
   socket.on('disconnect', function(){
     console.log('user disconnected');

@@ -53,7 +53,7 @@ app.post('/hook', function (req, res) {
 
         return res.json(
             {
-                "yolo"
+            
             }
         );
     } catch (err) {

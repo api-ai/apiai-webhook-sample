@@ -46,6 +46,23 @@ app.post('/hook', function (req, res) {
 
             if (body.result.action) {
                 console.log(body.result.action);
+
+                if(body.result.action == "cookie"){
+
+                    // Listen on the connection event for incoming sockets, and log it to the console.
+                    io.on('connection', function(socket){
+                      console.log('a user connected');
+
+                      setTimeout(function(){
+                        //Sending an object when emmiting an event
+                        socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
+                        }, 4000);
+
+                      socket.on('disconnect', function(){
+                        console.log('user disconnected');
+                      });
+                    });
+                }
             } 
         }
 
@@ -71,20 +88,6 @@ app.post('/hook', function (req, res) {
 // Defining a route handler / that gets called when we hit our website home.
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/frontend/index.html');
-});
-
-// Listen on the connection event for incoming sockets, and log it to the console.
-io.on('connection', function(socket){
-  console.log('a user connected');
-
-  setTimeout(function(){
-    //Sending an object when emmiting an event
-    socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
-    }, 4000);
-
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
 });
 
 

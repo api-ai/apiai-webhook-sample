@@ -48,13 +48,11 @@ app.post('/hook', function (req, res) {
                 console.log(body.result.action);
             } 
         }
-            
+
 
 
         return res.json({
-            speech: speech,
-            displayText: speech,
-            source: 'apiai-webhook-sample'
+            yolo
         });
     } catch (err) {
         console.error("Can't process request", err);

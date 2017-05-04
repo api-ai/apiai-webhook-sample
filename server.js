@@ -81,7 +81,7 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
   console.log('a user connected');
   setTimeout(function(){
-    console.log(res.json);
+    console.log(json);
     //Sending an object when emmiting an event
     socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
     }, 4000);

@@ -80,7 +80,7 @@ app.get('/', function(req, res){
 // Listen on the connection event for incoming sockets, and log it to the console.
 io.on('connection', function(socket){
   console.log('a user connected');
-  console.log(res.json);
+  console.log(json);
   setTimeout(function(){
     //Sending an object when emmiting an event
     socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});

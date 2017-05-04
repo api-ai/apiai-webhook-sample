@@ -81,8 +81,9 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
   console.log('a user connected');
   setTimeout(function(){
-    socket.send('Sent a message 4seconds after connection!');
-  }, 4000);
+    //Sending an object when emmiting an event
+    socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
+    }, 4000);
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });

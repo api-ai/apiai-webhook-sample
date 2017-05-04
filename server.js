@@ -36,24 +36,20 @@ app.post('/hook', function (req, res) {
     console.log('Request from API.ai received');
 
     try {   
-        var speech = 'empty speech';
-
         if (req.body && req.body.result) {
             var body = req.body;
-            speech = '';
 
             if (body.result.fulfillment) {
-                speech += body.result.fulfillment.speech;
-                speech += ' ';
+                console.log(body.result.fulfillment.speech);
+     
             }
 
             if (body.result.action) {
-                speech += 'action: ' + body.result.action;
-            }
-            
+                console.log(body.result.action);
+            } 
         }
+            
 
-        console.log('result: ', speech);
 
         return res.json({
             speech: speech,
@@ -80,10 +76,12 @@ app.get('/', function(req, res){
 // Listen on the connection event for incoming sockets, and log it to the console.
 io.on('connection', function(socket){
   console.log('a user connected');
+
   setTimeout(function(){
     //Sending an object when emmiting an event
     socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
     }, 4000);
+
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });

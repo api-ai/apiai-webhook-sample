@@ -79,8 +79,10 @@ io.on('connection', function(socket){
 
     //defining a 'watcher' for an attribute
     watch(currentAction, "action", function(){
-        if(!!currentAction.action && typeof currentAction.action == "String") {
 
+        console.log('value of action changed');
+        if(!!currentAction.action && typeof currentAction.action == "String") {
+                console.log('action is string and true');
             switch (currentAction.action) {
                 case "cookie":
                     console.log("cookie action trigggerd!");
@@ -88,8 +90,8 @@ io.on('connection', function(socket){
                 default: 
                     console.log(currentAction.action);
             }
-
-            currentAction.action = "";
+    console.log('switch is finished');
+            // currentAction.action = "";
         }
     });
 

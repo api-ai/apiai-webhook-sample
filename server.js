@@ -32,11 +32,8 @@ const io = require('socket.io')(http);
 app.use(bodyParser.json());
 
 app.post('/hook', function (req, res) {
-
-
-    function manual_reconnect() {
-   socket.io.reconnect();
-}
+    
+});
 
 //Listen on the connection event for incoming sockets, and log it to the console.
     io.on('connection', function(socket){
@@ -72,7 +69,7 @@ app.post('/hook', function (req, res) {
         });
     }
     });
-});
+
 
 // Defining a route handler / that gets called when we hit our website home.
 app.get('/', function(req, res){

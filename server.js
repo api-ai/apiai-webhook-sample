@@ -32,11 +32,41 @@ const io = require('socket.io')(http);
 app.use(bodyParser.json());
 
 app.post('/hook', function (req, res) {
-    
+
+    console.log('Request from API.ai received');
+
+    try {   
+        if (req.body && req.body.result) {
+            var body = req.body;
+
+            if (body.result.fulfillment) {
+                console.log(body.result.fulfillment.speech);
+     
+            }
+
+            if (body.result.action) {
+                console.log(body.result.action);
+            } 
+        }
+
+        return res.json(
+            {
+            
+            }
+        );
+    } catch (err) {
+        console.error("Can't process request", err);
+
+        return res.status(400).json({
+            status: {
+                code: 400,
+                errorType: err.message
+            }
+        });
+    }
 });
 
-//Listen on the connection event for incoming sockets, and log it to the console.
-    io.on('connection', function(socket){
+io.on('connection', function(socket){
       console.log('a user connected');
 
 
@@ -69,7 +99,6 @@ app.post('/hook', function (req, res) {
         });
     }
     });
-
 
 // Defining a route handler / that gets called when we hit our website home.
 app.get('/', function(req, res){

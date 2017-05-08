@@ -69,9 +69,6 @@ app.post('/hook', function (req, res) {
 io.on('connection', function(socket){
       console.log('a user connected');
 
-
-        console.log('Request from API.ai received');
-
     //     try {   
     //         if (req.body && req.body.result && req.body.result.action) {
 

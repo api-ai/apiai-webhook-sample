@@ -54,7 +54,7 @@ app.post('/hook', function (req, res) {
             }
 
             if (body.result.action) {
-                console.log(body.result.action);
+                // console.log(body.result.action);
 
                 currentAction.action = body.result.action;
             } 
@@ -79,7 +79,18 @@ io.on('connection', function(socket){
 
     //defining a 'watcher' for an attribute
     watch(currentAction, "action", function(){
-        console.log(currentAction.action);
+        if(!!currentAction.action && typeof currentAction.action == "String") {
+
+            switch (currentAction.action) {
+                case "cookie":
+                    console.log("cookie action trigggerd!");
+                    break;
+                default: 
+                    console.log(currentAction.action);
+            }
+
+            currentAction.action = "";
+        }
     });
 
 

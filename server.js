@@ -48,22 +48,23 @@ app.post('/hook', function (req, res) {
                 console.log(body.result.action);
                 console.log(typeof body.result.action)
 
-                if(body.result.action == "cookie"){
-                     setTimeout(function(){
-                     //Sending an object when emmiting an event
-                     socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
-                     }, 4000);
-                     
-                    // Listen on the connection event for incoming sockets, and log it to the console.
-                    io.on('connection', function(socket){
+                 io.on('connection', function(socket){
                       console.log('a user connected');
 
-                      
+                      setTimeout(function(){
+                        //Sending an object when emmiting an event
+                        socket.emit('testerEvent', { description: body.result.action});
+                        }, 4000);
 
                       socket.on('disconnect', function(){
                         console.log('user disconnected');
                       });
-                    });
+                    });               
+
+                if(body.result.action == "cookie"){
+
+                    //Listen on the connection event for incoming sockets, and log it to the console.
+                    
                 }
             } 
         }

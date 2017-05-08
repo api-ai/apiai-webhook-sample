@@ -87,11 +87,13 @@ io.on('connection', function(socket){
             switch (currentAction.action) {
                 case "cookie":
                     console.log("cookie action trigggerd!");
+                    socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
                     break;
                 default: 
                     console.log(currentAction.action);
             }
-    console.log('switch is finished');
+            
+            console.log('switch is finished');
             // currentAction.action = "";
         }
     });

@@ -72,32 +72,32 @@ io.on('connection', function(socket){
 
         console.log('Request from API.ai received');
 
-        try {   
-            if (req.body && req.body.result && req.body.result.action) {
+    //     try {   
+    //         if (req.body && req.body.result && req.body.result.action) {
 
-                var action = req.body.result.action
+    //             var action = req.body.result.action
 
-                switch (action){
-                    case "cookie": 
-                     socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
-                }
-            } 
+    //             switch (action){
+    //                 case "cookie": 
+    //                  socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
+    //             }
+    //         } 
 
-            return res.json(
-            {
+    //         return res.json(
+    //         {
             
-            });
+    //         });
    
-    } catch (err) {
-        console.error("Can't process request", err);
+    // } catch (err) {
+    //     console.error("Can't process request", err);
 
-        return res.status(400).json({
-            status: {
-                code: 400,
-                errorType: err.message
-            }
-        });
-    }
+    //     return res.status(400).json({
+    //         status: {
+    //             code: 400,
+    //             errorType: err.message
+    //         }
+    //     });
+    // }
     });
 
 // Defining a route handler / that gets called when we hit our website home.

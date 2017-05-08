@@ -44,10 +44,10 @@ app.post('/hook', function (req, res) {
             if (req.body && req.body.result) {
                 var body = req.body;
 
-                if (body.result.fulfillment) {
-                    console.log(body.result.fulfillment.speech);
+                // if (body.result.fulfillment) {
+                //     console.log(body.result.fulfillment.speech);
          
-                }
+                // }
 
                 if (body.result.action) {
                     console.log(body.result.action);
@@ -59,15 +59,12 @@ app.post('/hook', function (req, res) {
                     }
                 }
             } 
-        }   
 
-    });
-
-        return res.json(
+            return res.json(
             {
             
-            }
-        );
+            });
+   
     } catch (err) {
         console.error("Can't process request", err);
 
@@ -78,6 +75,7 @@ app.post('/hook', function (req, res) {
             }
         });
     }
+    });
 });
 
 // Defining a route handler / that gets called when we hit our website home.

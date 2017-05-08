@@ -42,8 +42,6 @@ app.use(bodyParser.json());
 
 app.post('/hook', function (req, res) {
 
-    console.log(coolData[0]);
-
     console.log('Request from API.ai received');
 
     try {   

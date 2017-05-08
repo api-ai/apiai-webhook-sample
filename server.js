@@ -31,7 +31,7 @@ const http = require('http').Server(app);
 // Import socket.io
 const io = require('socket.io')(http);
 
-const WatchJS = require("watchjs")
+const WatchJS = require("melanke-watchjs")
 var watch = WatchJS.watch;
 var unwatch = WatchJS.unwatch;
 var callWatchers = WatchJS.callWatchers;

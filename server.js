@@ -41,22 +41,13 @@ app.post('/hook', function (req, res) {
         console.log('Request from API.ai received');
 
         try {   
-            if (req.body && req.body.result) {
-                var body = req.body;
+            if (req.body && req.body.result && req.body.result.action) {
 
-                // if (body.result.fulfillment) {
-                //     console.log(body.result.fulfillment.speech);
-         
-                // }
+                var action = req.body.result.action
 
-                if (body.result.action) {
-                    console.log(body.result.action);
-                    console.log(typeof body.result.action)
-
-                    if(body.result.action == "cookie"){
-                        socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
-                  
-                    }
+                switch (action){
+                    case "cookie": 
+                     socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
                 }
             } 
 

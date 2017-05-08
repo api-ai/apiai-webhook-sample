@@ -6,8 +6,11 @@
  ******************/
 //test
 
-// Enable strict mode
-"use strict";
+// Enabling ES6 support and defining global variables
+(function(globals){
+    "use strict";
+    globals.coolData = ["yolo"];
+}( (1, eval)('this') ));
 
 // Import Express for routing, etc.
 const express = require('express');
@@ -28,10 +31,18 @@ const http = require('http').Server(app);
 // Import socket.io
 const io = require('socket.io')(http);
 
+const WatchJS = require("watchjs")
+var watch = WatchJS.watch;
+var unwatch = WatchJS.unwatch;
+var callWatchers = WatchJS.callWatchers;
+
+
 
 app.use(bodyParser.json());
 
 app.post('/hook', function (req, res) {
+
+    console.log(coolData[0]);
 
     console.log('Request from API.ai received');
 

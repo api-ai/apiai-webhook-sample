@@ -33,43 +33,35 @@ app.use(bodyParser.json());
 
 app.post('/hook', function (req, res) {
 
-    console.log('Request from API.ai received');
+//Listen on the connection event for incoming sockets, and log it to the console.
+    io.on('connection', function(socket){
+      console.log('a user connected');
 
-    try {   
-        if (req.body && req.body.result) {
-            var body = req.body;
 
-            if (body.result.fulfillment) {
-                console.log(body.result.fulfillment.speech);
-     
-            }
+        console.log('Request from API.ai received');
 
-            if (body.result.action) {
-                console.log(body.result.action);
-                console.log(typeof body.result.action)
+        try {   
+            if (req.body && req.body.result) {
+                var body = req.body;
 
-                 io.on('connection', function(socket){
-                      console.log('a user connected');
+                if (body.result.fulfillment) {
+                    console.log(body.result.fulfillment.speech);
+         
+                }
 
-                      setTimeout(function(){
-                        //Sending an object when emmiting an event
-                        socket.emit('testerEvent', { description: body.result.action});
-                        }, 4000);
+                if (body.result.action) {
+                    console.log(body.result.action);
+                    console.log(typeof body.result.action)
 
-                      socket.on('disconnect', function(){
-                        console.log('user disconnected');
-                      });
-                    });               
-
-                if(body.result.action == "cookie"){
-
-                    //Listen on the connection event for incoming sockets, and log it to the console.
-                    
+                    if(body.result.action == "cookie"){
+                        socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
+                  
+                    }
                 }
             } 
-        }
+        }   
 
-
+    });
 
         return res.json(
             {

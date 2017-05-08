@@ -56,11 +56,12 @@ app.post('/hook', function (req, res) {
             if (body.result.action) {
                 console.log(body.result.action);
 
-                currentAction.action = "cookie";
+                currentAction.action = body.result.action;
             } 
         }
 
         res.status(200);
+
     } catch (err) {
         console.error("Can't process request", err);
 
@@ -78,7 +79,7 @@ io.on('connection', function(socket){
 
     //defining a 'watcher' for an attribute
     watch(currentAction, "action", function(){
-        console.log("New action!");
+        console.log(currentAction.action);
     });
 
 

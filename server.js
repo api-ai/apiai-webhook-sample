@@ -33,6 +33,11 @@ app.use(bodyParser.json());
 
 app.post('/hook', function (req, res) {
 
+
+    function manual_reconnect() {
+   socket.io.reconnect();
+}
+
 //Listen on the connection event for incoming sockets, and log it to the console.
     io.on('connection', function(socket){
       console.log('a user connected');

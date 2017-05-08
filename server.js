@@ -81,7 +81,11 @@ io.on('connection', function(socket){
     watch(currentAction, "action", function(){
 
         console.log('value of action changed');
-        if(!!currentAction.action && typeof currentAction.action == "String") {
+
+        console.log(!!currentAction.action);
+        console.log(!!typeof currentAction.action == "String");
+
+        if(!!currentAction.action && !!typeof currentAction.action == "String") {
                 console.log('action is string and true');
             switch (currentAction.action) {
                 case "cookie":

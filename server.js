@@ -9,7 +9,9 @@
 // Enabling ES6 support and defining global variables
 (function(globals){
     "use strict";
-    globals.coolData = ["yolo"];
+    globals.currentAction = {
+        action: ""
+    };
 }( (1, eval)('this') ));
 
 // Import Express for routing, etc.
@@ -36,8 +38,6 @@ var watch = WatchJS.watch;
 var unwatch = WatchJS.unwatch;
 var callWatchers = WatchJS.callWatchers;
 
-
-
 app.use(bodyParser.json());
 
 app.post('/hook', function (req, res) {
@@ -57,14 +57,12 @@ app.post('/hook', function (req, res) {
 
             if (body.result.action) {
                 console.log(body.result.action);
+
+                currentAction.action = "cookie";
             } 
         }
 
-        return res.json(
-            {
-            
-            }
-        );
+        res.status(200);
     } catch (err) {
         console.error("Can't process request", err);
 
@@ -79,6 +77,13 @@ app.post('/hook', function (req, res) {
 
 io.on('connection', function(socket){
       console.log('a user connected');
+
+    //defining a 'watcher' for an attribute
+    watch(currentAction, "action", function(){
+        console.log("New action!");
+    });
+
+
 
     //     try {   
     //         if (req.body && req.body.result && req.body.result.action) {

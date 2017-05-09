@@ -87,7 +87,11 @@ io.on('connection', function(socket){
             switch (currentAction.action) {
                 case "cookie":
                     console.log("cookie action trigggerd!");
-                    socket.emit('testerEvent', { description: 'A custom event named testerEvent!'});
+                    socket.emit('testerEvent', { description: 'Koekje eten'});
+                    break;
+                case "LookAtMenu":
+                    console.log("look at menu action triggered");
+                    socket.emit('testerEvent', { description: 'Wat staat er op het menu?'});
                     break;
                 default: 
                     console.log(currentAction.action);

@@ -3,6 +3,20 @@
   <head>
     <title>Coole shit enzo</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <script>
+          var socket = io();
+          socket.on('cookie', function(data){
+            // document.write(data.description);
+            document.write('<img id="image-content" src="http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg">');
+          });
+
+          socket.on('menu', function(data){
+            // document.write(data.description);
+            document.write('<img id="image-content" src="http://curragower.com/wp-content/uploads/2015/02/Lunch-and-Evening-Menus.png">');
+          });
+
+    </script>
+
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
@@ -12,24 +26,6 @@
   <body>
     <img id="image-content" src="">
   </body>
-  
-  <script>
-          var socket = io();
 
-
-          socket.on('cookie', function(data){
-            // document.write(data.description);
-            document.write('<img id="image-content" src="http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg">');
-            // document.getElementById("image-content").src= '<img id="image-content" src="http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg">';
-            console.log(document.getElementById("image-content"));
-          });
-
-          socket.on('menu', function(data){
-            // document.write(data.description);
-            document.write('<img id="image-content" src="http://curragower.com/wp-content/uploads/2015/02/Lunch-and-Evening-Menus.png">');
-            document.getElementById("image-content").src= '<img id="image-content" src="http://curragower.com/wp-content/uploads/2015/02/Lunch-and-Evening-Menus.png">';
-          });
-
-    </script>
 
 </html>

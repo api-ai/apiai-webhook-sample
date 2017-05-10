@@ -20,7 +20,8 @@
           socket.on('cookie', function(data){
             // document.write(data.description);
             document.write('<img id="image-content" src="http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg">');
-            document.getElementById("image-content").src= '<img id="image-content" src="http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg">';
+            // document.getElementById("image-content").src= '<img id="image-content" src="http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg">';
+            console.log(document.getElementById("image-content"));
           });
 
           socket.on('menu', function(data){

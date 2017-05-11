@@ -7,12 +7,13 @@
           var socket = io();
           socket.on('cookie', function(data){
 
-
+          var section = document.contains(document.getElementById("section");
             // document.write(data.description);
-            if (document.contains(document.getElementById("body"))) {
+            if (document.contains(document.getElementById("section"))) {
                         // document.getElementById("image-content").src = "http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg";
-                        document.body.style.background = "url('http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg') center center no-repeat";
-                              document.body.style.backgroundSize = "cover";
+
+                        document.section.style.background = "url('http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg') center center no-repeat";
+                              document.section.style.backgroundSize = "cover";
             }  
             else {
                     console.log("detects no body tag"); 
@@ -37,8 +38,9 @@
     </style>
     
   </head>
-  <body id="body">
+  <body>
     <img id="image-content" src="">
+    <section id="section"></section>
   </body>
 
 

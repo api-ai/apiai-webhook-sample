@@ -7,7 +7,7 @@
           var socket = io();
           socket.on('cookie', function(data){
 
-            var html = document.getElementsByTagName("html");
+            var html = document.querySelector("html");
             // document.write(data.description);
             console.log(html);
 

@@ -11,9 +11,9 @@
             var inner = htmlEl.innerHTML;
             
             // document.write(data.description);
-            console.log(inner);
+            console.log(htmlEl);
 
-            inner.setAttribute("style", "background: url(http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;");
+            htmlEl.setAttribute("style", "background: url(http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;");
           });
 
           socket.on('menu', function(data){

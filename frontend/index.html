@@ -6,13 +6,13 @@
     <script>
           var socket = io();
           socket.on('cookie', function(data){
+
+            var html = document.getElementsByTagName("html");
             // document.write(data.description);
-            if (document.contains(document.getElementById("image-content"))) {
-                        document.getElementById("image-content").src = "http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg";
+            console.log(html);
+            if (document.contains(html)) {
+                        html.setAttribute("style", "background: url(http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;");
             }  
-            else {
-                    document.write('<img id="image-content" src="http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg">');;  
-            }
           });
 
           socket.on('menu', function(data){

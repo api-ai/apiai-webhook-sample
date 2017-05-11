@@ -7,6 +7,7 @@
           var socket = io();
           socket.on('cookie', function(data){
 
+            document.body.style.background.className = "animate";
 
             // document.write(data.description);
             if (document.contains(document.getElementById("body"))) {

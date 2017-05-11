@@ -12,7 +12,7 @@
             if (document.contains(document.getElementById("body"))) {
                         // document.getElementById("image-content").src = "http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg";
                         document.body.style.background = "url('http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg') no-repeat center center fixed";
-                              document.body.style.backgroundSize = "cover";
+                              document.body.style.backgroundSize = "contain";
             }  
             else {
                     console.log("detects no body tag"); 
@@ -35,10 +35,10 @@
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { 
         background: url(http://irisvanstiphout.nl/google-home.png) no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -o-background-size: contain;
+        background-size: contain;
       }
     </style>
     

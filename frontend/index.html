@@ -7,14 +7,12 @@
           var socket = io();
           socket.on('cookie', function(data){
 
-          var section = document.getElementById("section");
-          console.log(section);
-            // document.write(data.description);
-            if (document.contains(document.getElementById("section"))) {
-                        // document.getElementById("image-content").src = "http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg";
 
-                        section.style.background = "url('http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg') no-repeat center center fixed";
-                              section.style.backgroundSize = "cover";
+            // document.write(data.description);
+            if (document.contains(document.getElementById("body"))) {
+                        // document.getElementById("image-content").src = "http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg";
+                        document.body.style.background = "url('http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg') no-repeat center center fixed";
+                              document.body.style.backgroundSize = "cover";
             }  
             else {
                     console.log("detects no body tag"); 

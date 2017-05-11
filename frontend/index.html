@@ -7,13 +7,14 @@
           var socket = io();
           socket.on('cookie', function(data){
 
-            var htmlEl = document.body.parentNode;
-            var inner = htmlEl.innerHTML;
             
             // document.write(data.description);
-            console.log(htmlEl);
-
-            htmlEl.setAttribute("style", "background: url(http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;");
+            if (document.contains(document.getElementById("image-content"))) {
+                        document.getElementById("image-content").src = "http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg";
+            }  
+            else {
+                    document.write('<img id="image-content" src="http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg">');;  
+            }
           });
 
           socket.on('menu', function(data){

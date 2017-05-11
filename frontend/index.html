@@ -7,11 +7,13 @@
           var socket = io();
           socket.on('cookie', function(data){
 
-            var html = document.querySelector("html");
+            var htmlEl = document.body.parentNode;
+            var inner = htmlEl.innerHTML;
+            
             // document.write(data.description);
-            console.log(html);
+            console.log(inner);
 
-            html.setAttribute("style", "background: url(http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;");
+            inner.setAttribute("style", "background: url(http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;");
           });
 
           socket.on('menu', function(data){

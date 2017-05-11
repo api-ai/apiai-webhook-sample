@@ -7,15 +7,9 @@
           var socket = io();
           socket.on('cookie', function(data){
 
-
             // document.write(data.description);
-            if (document.contains(document.getElementById("body"))) {
-                        // document.getElementById("image-content").src = "http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg";
-                        document.body.style.backgroundImage = "url('http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg')";
-            }  
-            else {
-                    document.write('<img id="image-content" src="http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg">');  
-            }
+            document.body.style.backgroundImage = "url('http://www.perfectmanage.eu/userfiles/2034/images/Koekje.jpg')";
+
           });
 
           socket.on('menu', function(data){

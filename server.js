@@ -93,6 +93,10 @@ io.on('connection', function(socket){
                     console.log("look at menu action triggered");
                     socket.emit('menu', { description: currentAction.action});
                     break;
+                case "fysio":
+                    console.log("fysio action trigggerd!");
+                    socket.emit('fysio', { description: currentAction.action});
+                    break;
                 default: 
                     console.log(currentAction.action);
             }

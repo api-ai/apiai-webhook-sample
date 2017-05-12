@@ -22,7 +22,7 @@
           socket.on('fysio', function(data){
 
             if (document.contains(document.getElementById("body"))) {
-                        document.body.innerHTML += '<video id="bgvid" playsinline autoplay muted loop><source src="http://www.irisvanstiphout.nl/probeersel.mov" type="video/mov"></video>';
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/probeersel.mov" playsinline autoplay muted loop</video>';
             }  
             else {
                     console.log("detects no body tag"); 

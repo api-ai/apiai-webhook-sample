@@ -17,7 +17,7 @@
           height: auto;
           z-index: -100;
           transform: translateX(-50%) translateY(-50%);
-        background-size: cover;
+        background-size: contain;
         transition: 1s opacity;
       }
 

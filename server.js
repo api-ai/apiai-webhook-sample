@@ -101,6 +101,10 @@ io.on('connection', function(socket){
                     console.log("introduce action trigggerd!");
                     socket.emit('introduce', { description: currentAction.action});
                     break;
+                case "recepten":
+                    console.log("recepten action trigggerd!");
+                    socket.emit('recepten', { description: currentAction.action});
+                    break;    
                 default: 
                     console.log(currentAction.action);
             }

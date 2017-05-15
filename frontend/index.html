@@ -29,6 +29,16 @@
             }
           });
 
+          socket.on('recepten', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/recepten.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
           socket.on('menu', function(data){
             if (document.contains(document.getElementById("body"))) {
                         document.getElementById("image-content").src = "http://curragower.com/wp-content/uploads/2015/02/Lunch-and-Evening-Menus.png";
@@ -50,8 +60,6 @@
     </script>
     
   </head>
-  <body id="body">
-  </body>
-
+  <body id="body"></body>
 
 </html>

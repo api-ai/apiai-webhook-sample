@@ -9,6 +9,8 @@ body {
   -moz-background-size: contain;
   -o-background-size: contain;
   background-size: contain;
+  margin: 0;
+  background: #000; 
 }
 
 video { 

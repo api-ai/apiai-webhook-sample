@@ -38,6 +38,15 @@
             }
           });
 
+          socket.on('introduce', function(data){
+            if (document.contains(document.getElementById("image-content"))) {
+                        document.getElementById("image-content").src = "http://curragower.com/wp-content/uploads/2015/02/Lunch-and-Evening-Menus.png";
+            }  
+            else {
+                    document.write('<img id="image-content" src="http://curragower.com/wp-content/uploads/2015/02/Lunch-and-Evening-Menus.png">');  
+            }
+          });
+
     </script>
     
   </head>

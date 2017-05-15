@@ -15,7 +15,8 @@ video {
   position: fixed;
   top: 50%;
   left: 50%;
-  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   width: auto;
   height: auto;
   z-index: -100;
@@ -29,8 +30,6 @@ video {
 }
 
 @media screen and (max-device-width: 800px) {
-  html { 
-          background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
-          #bgvid { display: none; 
+        #bgvid { display: none; 
         }
   }

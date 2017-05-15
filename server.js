@@ -97,6 +97,10 @@ io.on('connection', function(socket){
                     console.log("fysio action trigggerd!");
                     socket.emit('fysio', { description: currentAction.action});
                     break;
+                case "introduce":
+                    console.log("introduce action trigggerd!");
+                    socket.emit('introduce', { description: currentAction.action});
+                    break;
                 default: 
                     console.log(currentAction.action);
             }

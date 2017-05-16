@@ -92,6 +92,29 @@ io.on('connection', function(socket){
                     console.log("intro action triggered");
                     socket.emit('intro', { description: currentAction.action});
                     break;
+                case "result":
+                    console.log("result action trigggerd!");
+                    socket.emit('result', { description: currentAction.action});
+                    break;  
+                case "sassy":
+                    console.log("sassy action trigggerd!");
+                    socket.emit('sassy', { description: currentAction.action});
+                    break;  
+                case "joke":
+                    console.log("joke action trigggerd!");
+                    socket.emit('joke', { description: currentAction.action});
+                    break; 
+                case "benefits":
+                    console.log("benefits action trigggerd!");
+                    socket.emit('benefits', { description: currentAction.action});
+                    break; 
+                case "home":
+                    console.log("home action trigggerd!");
+                    socket.emit('home', { description: currentAction.action});
+                    break; 
+
+
+
                 case "cookie":
                     console.log("cookie action trigggerd!");
                     socket.emit('cookie', { description: currentAction.action});
@@ -107,11 +130,7 @@ io.on('connection', function(socket){
                 case "recepten":
                     console.log("recepten action trigggerd!");
                     socket.emit('recepten', { description: currentAction.action});
-                    break;
-                case "research":
-                    console.log("research action trigggerd!");
-                    socket.emit('research', { description: currentAction.action});
-                    break;    
+                    break;  
                 default: 
                     console.log(currentAction.action);
             }

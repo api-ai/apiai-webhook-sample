@@ -42,6 +42,56 @@
             }
           });
 
+          socket.on('result', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/results.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
+          socket.on('sassy', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/sassy.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
+          socket.on('joke', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/joke.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
+          socket.on('benefits', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/benefits.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
+          socket.on('home', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/home.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
 
 
 

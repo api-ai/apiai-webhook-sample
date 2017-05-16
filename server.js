@@ -54,7 +54,7 @@ app.post('/hook', function (req, res) {
             }
 
             if (body.result.action) {
-                console.log(body.result.action);
+                // console.log(body.result.action);
 
                 currentAction.action = body.result.action;
             } 

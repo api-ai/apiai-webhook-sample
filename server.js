@@ -49,14 +49,20 @@ app.post('/hook', function (req, res) {
             var body = req.body;
 
             if (body.result.fulfillment) {
-                // console.log(body.result.fulfillment.speech);
+                console.log(body.result.fulfillment.speech);
      
             }
 
             if (body.result.action) {
-                // console.log(body.result.action);
+                console.log(body.result.action);
+                console.log(currentAction.action);
+
                 if(currentAction.action != body.result.action){
                     currentAction.action = body.result.action;
+                    console.log(body.result.action);
+                    console.log(currentAction.action);
+
+
                 } 
             } 
         }

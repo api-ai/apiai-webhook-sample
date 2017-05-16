@@ -54,6 +54,8 @@ app.post('/hook', function (req, res) {
             }
 
             if (body.result.action) {
+
+                 res.send(200);
                 // console.log(body.result.action + "hier");
                 // console.log(currentAction.action + "niethier");
 
@@ -63,9 +65,7 @@ app.post('/hook', function (req, res) {
                     // console.log(currentAction.action + "echtniethier");
 
 
-                    return res.status(200).json({
-                        "speech": "I like cookies, please give me some."
-                    });
+           
                 } 
             } 
         }

@@ -19,6 +19,19 @@
             }
           });
 
+          //////////////// ------   start presentation   -----  //////////////////////////
+
+          
+          socket.on('intro', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/intro.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
           socket.on('fysio', function(data){
 
             if (document.contains(document.getElementById("body"))) {
@@ -33,6 +46,16 @@
 
             if (document.contains(document.getElementById("body"))) {
                         document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/recepten.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
+          socket.on('research', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/research.m4v" playsinline autoplay muted></video>';
             }  
             else {
                     console.log("detects no body tag"); 

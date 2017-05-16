@@ -85,6 +85,10 @@ io.on('connection', function(socket){
         if(!!currentAction.action) {
                 console.log('action is string and true');
             switch (currentAction.action) {
+                case "intro":
+                    console.log("intro action triggered");
+                    socket.emit('intro', { description: currentAction.action});
+                    break;
                 case "cookie":
                     console.log("cookie action trigggerd!");
                     socket.emit('cookie', { description: currentAction.action});
@@ -104,6 +108,10 @@ io.on('connection', function(socket){
                 case "recepten":
                     console.log("recepten action trigggerd!");
                     socket.emit('recepten', { description: currentAction.action});
+                    break;
+                case "research":
+                    console.log("research action trigggerd!");
+                    socket.emit('research', { description: currentAction.action});
                     break;    
                 default: 
                     console.log(currentAction.action);

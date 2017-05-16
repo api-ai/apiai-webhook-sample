@@ -114,7 +114,7 @@ io.on('connection', function(socket){
             }
             
             console.log('switch is finished');
-            currentAction.action = "";
+            // currentAction.action = "";
         }
     });
 

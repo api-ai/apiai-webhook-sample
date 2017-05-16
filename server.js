@@ -54,20 +54,22 @@ app.post('/hook', function (req, res) {
             }
 
             if (body.result.action) {
-                console.log(body.result.action + "hier");
-                console.log(currentAction.action + "niethier");
+                // console.log(body.result.action + "hier");
+                // console.log(currentAction.action + "niethier");
 
                 if(currentAction.action != body.result.action){
                     currentAction.action = body.result.action;
-                    console.log(body.result.action + "echtwelhier");
-                    console.log(currentAction.action + "echtniethier");
+                    // console.log(body.result.action + "echtwelhier");
+                    // console.log(currentAction.action + "echtniethier");
 
 
+                    return res.status(200).json({
+                        "speech": "I like cookies, please give me some."
+                    });
                 } 
             } 
         }
 
-        res.status(200);
 
     } catch (err) {
         console.error("Can't process request", err);

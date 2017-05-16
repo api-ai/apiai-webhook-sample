@@ -116,7 +116,30 @@ io.on('connection', function(socket){
                     console.log("home action trigggerd!");
                     socket.emit('home', { description: currentAction.action});
                     break; 
-
+                case "agenda":
+                    console.log("agenda action trigggerd!");
+                    socket.emit('agenda', { description: currentAction.action});
+                    break; 
+                case "file":
+                    console.log("file action trigggerd!");
+                    socket.emit('file', { description: currentAction.action});
+                    break; 
+                case "fysio":
+                    console.log("fysio action trigggerd!");
+                    socket.emit('fysio', { description: currentAction.action});
+                    break;
+                case "recepten":
+                    console.log("recepten action trigggerd!");
+                    socket.emit('recepten', { description: currentAction.action});
+                    break;  
+                case "spongebob":
+                    console.log("spongebob action trigggerd!");
+                    socket.emit('spongebob', { description: currentAction.action});
+                    break;  
+                case "conclusion":
+                    console.log("conclusion action trigggerd!");
+                    socket.emit('conclusion', { description: currentAction.action});
+                    break;  
 
 
                 case "cookie":
@@ -127,14 +150,8 @@ io.on('connection', function(socket){
                     console.log("look at menu action triggered");
                     socket.emit('menu', { description: currentAction.action});
                     break;
-                case "fysio":
-                    console.log("fysio action trigggerd!");
-                    socket.emit('fysio', { description: currentAction.action});
-                    break;
-                case "recepten":
-                    console.log("recepten action trigggerd!");
-                    socket.emit('recepten', { description: currentAction.action});
-                    break;  
+                
+                
                 default: 
                     console.log(currentAction.action);
             }

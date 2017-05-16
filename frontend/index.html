@@ -27,7 +27,7 @@
           socket.on('intro', function(data){
 
           document.body.style.background = 'white';
-          
+
             if (document.contains(document.getElementById("body"))) {
                         document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/intro.m4v" playsinline autoplay muted></video>';
                         // document.body.style.background = 'white';
@@ -97,15 +97,30 @@
             }
           });
 
+          socket.on('agenda', function(data){
 
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/plannen.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
 
+          socket.on('file', function(data){
 
-
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/file.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
 
           socket.on('fysio', function(data){
 
             if (document.contains(document.getElementById("body"))) {
-                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/plannen.m4v" playsinline autoplay muted></video>';
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/fysio.m4v" playsinline autoplay muted></video>';
             }  
             else {
                     console.log("detects no body tag"); 
@@ -121,6 +136,30 @@
                     console.log("detects no body tag"); 
             }
           });
+
+          socket.on('spongebob', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/spongebob.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
+          socket.on('conclusion', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/conclusion.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
+
+
+
 
           
 

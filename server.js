@@ -54,13 +54,13 @@ app.post('/hook', function (req, res) {
             }
 
             if (body.result.action) {
-                console.log(body.result.action);
-                console.log(currentAction.action);
+                console.log(body.result.action + "hier");
+                console.log(currentAction.action + "niethier");
 
                 if(currentAction.action != body.result.action){
                     currentAction.action = body.result.action;
-                    console.log(body.result.action);
-                    console.log(currentAction.action);
+                    console.log(body.result.action + "echtwelhier");
+                    console.log(currentAction.action + "echtniethier");
 
 
                 } 

@@ -21,7 +21,7 @@
 
           //////////////// ------   start presentation   -----  //////////////////////////
 
-          
+          // recieves introduction action from server
           socket.on('intro', function(data){
 
             if (document.contains(document.getElementById("body"))) {
@@ -31,6 +31,21 @@
                     console.log("detects no body tag"); 
             }
           });
+
+          socket.on('research', function(data){
+
+            if (document.contains(document.getElementById("body"))) {
+                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/research.m4v" playsinline autoplay muted></video>';
+            }  
+            else {
+                    console.log("detects no body tag"); 
+            }
+          });
+
+
+
+
+
 
           socket.on('fysio', function(data){
 
@@ -52,15 +67,7 @@
             }
           });
 
-          socket.on('research', function(data){
-
-            if (document.contains(document.getElementById("body"))) {
-                        document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/research.m4v" playsinline autoplay muted></video>';
-            }  
-            else {
-                    console.log("detects no body tag"); 
-            }
-          });
+          
 
           socket.on('menu', function(data){
             if (document.contains(document.getElementById("body"))) {

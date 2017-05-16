@@ -50,24 +50,20 @@ app.post('/hook', function (req, res) {
 
             if (body.result.fulfillment) {
                 console.log(body.result.fulfillment.speech);
-     
             }
 
-            if (body.result.action) {
-                console.log("yolo");
-                 res.sendStatus(200);
-                // console.log(body.result.action + "hier");
-                // console.log(currentAction.action + "niethier");
-
-                if(currentAction.action != body.result.action){
-                    currentAction.action = body.result.action;
-                    // console.log(body.result.action + "echtwelhier");
-                    // console.log(currentAction.action + "echtniethier");
-
-
-           
-                } 
-            } 
+            if (body.result.action && currentAction.action != body.result.action) {
+                console.log("Updating action to: " + body.result.action);
+                currentAction.action = body.result.action;
+                res.sendStatus(200);
+            } else {
+                return res.status(400).json({
+                    status: {
+                        code: 400,
+                        failedAction: body.result.action;
+                    }
+                });
+            }
         }
 
 

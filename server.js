@@ -85,10 +85,8 @@ io.on('connection', function(socket){
     //defining a 'watcher' for an attribute
     watch(currentAction, "action", function(){
 
-        console.log(currentAction.action);
-
         if(!!currentAction.action) {
-                console.log('action is string and true');
+
             switch (currentAction.action) {
                 case "intro":
                     console.log("intro action triggered");
@@ -117,9 +115,6 @@ io.on('connection', function(socket){
                 default: 
                     console.log(currentAction.action);
             }
-            
-            console.log('switch is finished');
-            // currentAction.action = "";
         }
     });
 

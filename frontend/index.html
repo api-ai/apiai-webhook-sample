@@ -26,9 +26,11 @@
           // recieves introduction action from server
           socket.on('intro', function(data){
 
+          document.body.style.background = 'white';
+          
             if (document.contains(document.getElementById("body"))) {
                         document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/intro.m4v" playsinline autoplay muted></video>';
-                        document.body.style.background = 'white';
+                        // document.body.style.background = 'white';
             }  
             else {
                     console.log("detects no body tag"); 

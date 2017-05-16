@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="http://irisvanstiphout.nl/sophie/style.css">
     <script>
           var socket = io();
+
+
           socket.on('cookie', function(data){
 
             // document.write(data.description);
@@ -26,7 +28,7 @@
 
             if (document.contains(document.getElementById("body"))) {
                         document.body.innerHTML += '<video id="bgvid" src="http://www.irisvanstiphout.nl/sophie/intro.m4v" playsinline autoplay muted></video>';
-                        document.body.style.backgroundImage = "url('')";
+                        document.body.style.background = 'white';
             }  
             else {
                     console.log("detects no body tag"); 

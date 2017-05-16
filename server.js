@@ -80,7 +80,7 @@ io.on('connection', function(socket){
     //defining a 'watcher' for an attribute
     watch(currentAction, "action", function(){
 
-        console.log('value of action changed');
+        console.log(currentAction.action);
 
         if(!!currentAction.action) {
                 console.log('action is string and true');

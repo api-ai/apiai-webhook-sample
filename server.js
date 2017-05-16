@@ -49,7 +49,7 @@ app.post('/hook', function (req, res) {
             var body = req.body;
 
             if (body.result.fulfillment) {
-                console.log(body.result.fulfillment.speech);
+                // console.log(body.result.fulfillment.speech);
      
             }
 

@@ -89,10 +89,10 @@ io.on('connection', function(socket){
                     console.log("intro action triggered");
                     socket.emit('intro', { description: currentAction.action});
                     break;
-                // case "cookie":
-                //     console.log("cookie action trigggerd!");
-                //     socket.emit('cookie', { description: currentAction.action});
-                //     break;
+                case "cookie":
+                    console.log("cookie action trigggerd!");
+                    socket.emit('cookie', { description: currentAction.action});
+                    break;
                 // case "LookAtMenu":
                 //     console.log("look at menu action triggered");
                 //     socket.emit('menu', { description: currentAction.action});

@@ -54,8 +54,8 @@ app.post('/hook', function (req, res) {
             }
 
             if (body.result.action) {
-
-                 res.send(200);
+                console.log("yolo");
+                 res.sendStatus(200);
                 // console.log(body.result.action + "hier");
                 // console.log(currentAction.action + "niethier");
 

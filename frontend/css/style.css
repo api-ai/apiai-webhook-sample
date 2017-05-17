@@ -35,3 +35,7 @@ video {
         .bgvid { display: none; 
         }
   }
+
+.hidden {
+        display: none;
+      }

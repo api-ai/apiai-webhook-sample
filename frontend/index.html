@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sophie</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://irisvanstiphout.nl/sophie/style.css">
+    <script>
+          var socket = io();
+    </script>
+    
+  </head>
+    <body>
+    <video class="bgvid intro hidden" src="http://www.irisvanstiphout.nl/sophie/intro.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid research hidden" src="http://www.irisvanstiphout.nl/sophie/research.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid result hidden" src="http://www.irisvanstiphout.nl/sophie/result.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid sassy hidden" src="http://www.irisvanstiphout.nl/sophie/sassy.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid joke hidden" src="http://www.irisvanstiphout.nl/sophie/joke.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid benefits hidden" src="http://www.irisvanstiphout.nl/sophie/benefits.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid home hidden" src="http://www.irisvanstiphout.nl/sophie/home.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid agenda hidden" src="http://www.irisvanstiphout.nl/sophie/agenda.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid file hidden" src="http://www.irisvanstiphout.nl/sophie/file.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid fysio hidden" src="http://www.irisvanstiphout.nl/sophie/fysio.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid recepten hidden" src="http://www.irisvanstiphout.nl/sophie/recepten.m4v" playsinline muted preload="auto"></video>
+    <video class="bgvid spongebob hidden" src="http://www.irisvanstiphout.nl/sophie/spongebob.m4v" playsinline muted preload="auto"></video>  
+    <video class="bgvid conclusion hidden" src="http://www.irisvanstiphout.nl/sophie/conclusion.m4v" playsinline muted preload="auto"></video>  
+  </body>
+
+      <script>
+      
+          function setStage(stage) {
+
+            let notHidden = document.querySelectorAll(".bgvid:not(.hidden)");
+
+            for (let i = 0; i < notHidden.length; ++i) {
+              notHidden[i].classList.add("hidden");
+            }
+
+            let selector = "." + stage;
+
+            document.querySelector(selector).classList.remove("hidden")
+            document.querySelector(selector).play()
+          }
+
+          socket.on('intro', function(data){
+            setStage('intro');
+          });
+
+          socket.on('research', function(data){
+            setStage('research');
+          });
+
+          socket.on('result', function(data){
+            setStage('result');
+          });
+
+          socket.on('sassy', function(data){
+            setStage('sassy');
+          });
+
+          socket.on('joke', function(data){
+            setStage('joke');
+          });
+
+          socket.on('benefits', function(data){
+            setStage('benefits');
+          });
+
+          socket.on('home', function(data){
+            setStage('home');
+          });
+
+          socket.on('agenda', function(data){
+            setStage('agenda');
+          });
+
+          socket.on('file', function(data){
+            setStage('file');
+          });
+
+          socket.on('fysio', function(data){
+            setStage('fysio');
+          });
+
+          socket.on('recepten', function(data){
+            setStage('recepten');
+          });
+
+          socket.on('spongebob', function(data){
+            setStage('spongebob');
+          });
+
+          socket.on('conclusion', function(data){
+            setStage('conclusion');
+          });
+
+
+    </script>
+
+</html>

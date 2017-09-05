@@ -33,17 +33,8 @@ restService.post('/hook', function (req, res) {
         if (req.body) {
             var requestBody = req.body;
 
-            if (requestBody.result) {
-                speech = '';
-
-                if (requestBody.result.fulfillment) {
-                    speech += requestBody.result.fulfillment.speech;
-                    speech += ' ';
-                }
-
-                if (requestBody.result.action) {
-                    speech += 'action: ' + requestBody.result.action;
-                }
+            if (requestBody.result.resolvedQuery) {
+                speech = requestBody.result.resolvedQuery;
             }
         }
 

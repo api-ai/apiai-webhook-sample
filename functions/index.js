@@ -15,7 +15,7 @@
 
 const functions = require('firebase-functions');
 
-exports.apiaiFirebaseFulfillment = functions.https.onRequest((request, response) => {
+exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
   // Log the request header and body coming from API.AI to help debug issues.
   // See https://api.ai/docs/fulfillment#request for more.
   console.log('Request headers: ' + JSON.stringify(request.headers));

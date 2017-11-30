@@ -2,7 +2,6 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 const restService = express();
 restService.use(bodyParser.json());
@@ -61,7 +60,7 @@ restService.post('/hook', function (req, res) {
 
         console.log('result: ', speech);
 
-        var http = new XMLHttpRequest();
+        /*var http = new XMLHttpRequest();
         var url = "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/AllergyIntolerance?patient=4342012";
         http.open("GET", url, false);
 
@@ -70,7 +69,7 @@ restService.post('/hook', function (req, res) {
             if(http.readyState == 4 && http.status == 200) {
                 console.log(http.responseText);
             }
-        }
+        }*/
 
         /*get.concat(opts, function(err, res, data){
             if (err) throw err;
@@ -114,6 +113,6 @@ restService.post('/hook', function (req, res) {
     }
 });
 
-restService.listen((process.env.PORT || 5000), function () {
+restService.listen(process.env.PORT || 5000, function () {
     console.log("Server listening");
 });

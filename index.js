@@ -97,7 +97,7 @@ restService.post('/hook', function (req, res) {
         var showText = "Based on my data, "+patientName+" should be good with "+queryMedicine;
 
         return res.json({
-            speech: speech,
+            speech: showText,
             displayText: showText,
             source: 'apiai-webhook-sample'
         });

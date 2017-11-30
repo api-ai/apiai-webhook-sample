@@ -58,7 +58,7 @@ restService.post('/hook', function (req, res) {
             }
         }*/
 
-        console.log('result: ', speech);
+        
 
         /*var http = new XMLHttpRequest();
         var url = "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/AllergyIntolerance?patient=4342012";
@@ -94,7 +94,19 @@ restService.post('/hook', function (req, res) {
                 speech = "That should be good";
             }
         })*/
-        var showText = "Based on my data, "+patientName+" should be good with "+queryMedicine;
+        
+        switch(queryMedicine)
+        {
+            case "calpol":
+                var showText = "Based on available data, "+patientName+" is not having any allergies with "+queryMedicine;
+                break;
+            default:
+                var showText = "Based on available data, "+patientName+" is having allergies with "+queryMedicine;
+                showText += "\nHe might suffer from thorax inflamation as a result.";
+                showText += "\nWould you like to consider the therapeutic aleternative of Oxycodone?"
+        }
+
+        console.log('result: ', showText);
 
         return res.json({
             speech: showText,

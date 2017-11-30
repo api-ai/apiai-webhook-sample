@@ -94,8 +94,8 @@ restService.post('/hook', function (req, res) {
                 speech = "That should be good";
             }
         })*/
-        
-        switch(queryMedicine)
+        var queryMedicineSmall = queryMedicine.toLowerCase()
+        switch(queryMedicineSmall)
         {
             case "calpol":
                 var showText = "Based on available data, "+patientName+" is not having any allergies with "+queryMedicine;
@@ -103,7 +103,7 @@ restService.post('/hook', function (req, res) {
             default:
                 var showText = "Based on available data, "+patientName+" is having allergies with "+queryMedicine;
                 showText += "\nHe might suffer from thorax inflamation as a result.";
-                showText += "\nWould you like to consider the therapeutic aleternative of Oxycodone?"
+                showText += "\nWould you like to consider the therapeutic alternative of Oxycodone?"
         }
 
         console.log('result: ', showText);
